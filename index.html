@@ -16,7 +16,8 @@
   .nav{display:flex;gap:24px;list-style:none;align-items:center}
   .nav a{font-size:14px;color:#cbd5e1}.nav a:hover{color:#38bdf8}
   .download{border:1px solid #38bdf8;padding:9px 14px;border-radius:8px;color:#38bdf8!important}
-  .menu{display:none;font-size:27px}
+  .menu{display:none;font-size:27px;cursor:pointer}
+  .nav.open{display:flex}
   .hero{min-height:100vh;padding:120px 7% 70px;display:flex;align-items:center;justify-content:space-between;gap:50px;background:radial-gradient(circle at 80% 25%,rgba(14,165,233,.2),transparent 32%),radial-gradient(circle at 10% 80%,rgba(45,212,191,.08),transparent 28%)}
   .hero-text{max-width:680px;animation:hero-text-in .8s .12s ease both}.tag{color:#38bdf8;font-weight:700;letter-spacing:1.5px;font-size:14px}
   h1{font-size:clamp(48px,7vw,78px);line-height:1.05;margin:12px 0}h1 span{color:#38bdf8}
@@ -41,7 +42,7 @@
   .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;width:max-content;max-width:100%}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 18px;border-radius:8px;font-weight:700;letter-spacing:.2px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.22)}.btn.primary{background:#38bdf8;color:#04111e;border:1px solid #38bdf8}.btn.primary:hover{background:#7dd3fc}.btn.outline{background:transparent;color:#7dd3fc;border:1px solid #38bdf8}.btn.outline:hover{background:rgba(56,189,248,.12)}.resume-actions{display:flex;flex-direction:column;gap:12px}.resume-actions .btn{text-align:center}
   .contact{max-width:900px;margin:auto;text-align:center}.links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}.links a{padding:11px 16px;border:1px solid #334155;border-radius:8px;color:#cbd5e1}.links a:hover{border-color:#38bdf8;color:#38bdf8}
   footer{text-align:center;padding:28px;color:#64748b;border-top:1px solid #17283a}
-  @media(max-width:800px){.nav{display:none}.menu{display:block}.hero{flex-direction:column-reverse;text-align:center;padding-left:5%;padding-right:5%}.profile{width:230px;height:230px}.btns{justify-content:center}.resume-card{grid-template-columns:1fr}section{padding:65px 5%}}
+  @media(max-width:800px){.nav{display:none;position:absolute;top:72px;right:5%;left:5%;padding:16px;background:rgba(7,17,31,.96);border:1px solid rgba(56,189,248,.2);border-radius:12px;flex-direction:column;align-items:flex-start;box-shadow:0 18px 34px rgba(0,0,0,.25)}.nav.open{display:flex}.nav li{width:100%}.nav a{font-size:15px;width:100%;display:block}.download{display:block;text-align:center}.menu{display:block}.hero{flex-direction:column-reverse;text-align:center;padding-left:5%;padding-right:5%}.profile{width:230px;height:230px}.btns{justify-content:center}.resume-card{grid-template-columns:1fr}section{padding:65px 5%}}
   @media print{
   nav,.btns,.resume-actions,footer{display:none!important}body{background:white;color:#111}.hero{min-height:auto;padding:20px 0}.hero p,.card p,.project p,.resume-card p,.education p{color:#333}.profile{width:180px;height:180px;box-shadow:none}section{padding:28px 0}.card,.project,.resume-card,.education{background:white;border:1px solid #bbb;break-inside:avoid}.title{margin-bottom:20px}
   }
@@ -65,7 +66,7 @@
   <p>Passionate about mechanical design, automation, robotics and creating practical engineering solutions. Specialized in AutoCAD, 2D drafting, 3D modeling and mechatronics systems.</p>
  <div class="btns"><a class="btn primary" href="#projects">View My Work</a><a class="btn outline" href="Subash_Resume.pdf" download="Subash_Resume.pdf">Download Resume</a></div>
   </div>
- <div><div class="profile"><img id="profile-photo" src="your-photo.jpg.png" alt="Subash S"></div></div></section>  
+ <div><div class="profile-wrap"><div class="profile"><img id="profile-photo" src="your-photo.jpg.png" alt="Subash S"></div><div class="photo-upload"><input type="file" id="photo-input" accept="image/*" hidden><label for="photo-input">Upload Photo</label></div></div></div></section>  
   <section id="about"><div class="title"><h2>About <span>Me</span></h2><p>Engineering & Technical Identity</p></div>
   <div class="grid"><div class="card"><h3>Who I Am</h3><p>I am a second-year B.E. Mechatronics Engineering student at Coimbatore Institute of Engineering and Technology. My interests include mechanical CAD, technical drafting, 3D modeling, automation, robotics and control systems.</p></div>
   <div class="card"><h3>Career Objective</h3><p>Seeking an internship opportunity to apply engineering knowledge, strengthen CAD and design proficiency, and gain practical industry exposure in a professional environment.</p></div></div></section>
@@ -74,7 +75,7 @@
   <div class="grid"><div class="card"><h3>AutoCAD</h3><p>2D technical drafting</p></div><div class="card"><h3>3D CAD</h3><p>Mechanical modeling</p></div><div class="card"><h3>C Programming</h3><p>Programming fundamentals</p></div><div class="card"><h3>Python</h3><p>Programming and automation basics</p></div><div class="card"><h3>Java</h3><p>Basic programming</p></div><div class="card"><h3>HTML</h3><p>Responsive web development</p></div><div class="card"><h3>Engineering Drawing</h3><p>Design fundamentals</p></div><div class="card"><h3>Microsoft Office</h3><p>Technical documentation</p></div></div></section>
   
   <section id="projects"><div class="title"><h2>Featured <span>Project</span></h2></div>
-  <div class="project"><h3>2D & 3D Drafting Modelling</h3><div id="project-gallery" class="project-gallery"><img class="project-photo" src="Screenshot 2026-07-19 104016.png" alt="Project screenshot 1"><img class="project-photo" src="Screenshot 2026-07-20 190222.png" alt="Project screenshot 2"><img class="project-photo" src="Screenshot 2026-07-21 184350.png" alt="Project screenshot 3"><img class="project-photo" src="Screenshot 2026-07-21 192025.png" alt="Project screenshot 4"><img class="project-photo" src="Screenshot 2026-07-21 204653.png" alt="Project screenshot 5"><img class="project-photo" src="Screenshot 2026-07-21 211813.png" alt="Project screenshot 6"><img class="project-photo" src="Screenshot 2026-07-23 073817.png" alt="Project screenshot 7"><img class="project-photo" src="Screenshot 2026-07-24 220110.png" alt="Project screenshot 8"><img class="project-photo" src="Screenshot 2026-07-25 193159.png" alt="Project screenshot 9"><img class="project-photo" src="Screenshot 2026-07-25 200425 - Copy (2).png" alt="Project screenshot 10"><img class="project-photo" src="Screenshot 2026-07-25 200425 - Copy.png" alt="Project screenshot 11"><img class="project-photo" src="Screenshot 2026-07-25 200425.png" alt="Project screenshot 12"><img class="project-photo" src="Screenshot 2026-07-28 185336.png" alt="Project screenshot 13"><img class="project-photo" src="Screenshot 2026-07-28 215211 - Copy - Copy.png" alt="Project screenshot 14"><img class="project-photo" src="Screenshot 2026-07-28 215211 - Copy.png" alt="Project screenshot 15"><img class="project-photo" src="Screenshot 2026-07-28 215211.png" alt="Project screenshot 16"><img class="project-photo" src="Screenshot 2026-07-28 220722.png" alt="Project screenshot 17"><img class="project-photo" src="Screenshot 2026-07-28 223348 - Copy.png" alt="Project screenshot 18"><img class="project-photo" src="Screenshot 2026-07-28 223348.png" alt="Project screenshot 19"><img class="project-photo" src="Screenshot 2026-07-28 231626 - Copy.png" alt="Project screenshot 20"><img class="project-photo" src="Screenshot 2026-07-28 231626.png" alt="Project screenshot 21"><img class="project-photo" src="Screenshot 2026-07-30 174715.png" alt="Project screenshot 22"><img class="project-photo" src="Screenshot 2026-07-30 213200.png" alt="Project screenshot 23"><img class="project-photo" src="Screenshot 2026-07-30 215415.png" alt="Project screenshot 24"><img class="project-photo" src="Screenshot 2026-07-31 182639.png" alt="Project screenshot 25"><img class="project-photo" src="Screenshot 2026-07-31 223814.png" alt="Project screenshot 26"><img class="project-photo" src="Screenshot 2026-07-31 224231.png" alt="Project screenshot 27"><img class="project-photo" src="Screenshot 2026-08-02 100751.png" alt="Project screenshot 28"><img class="project-photo" src="Screenshot 2026-08-06 221511.png" alt="Project screenshot 29"><img class="project-photo" src="Screenshot 2026-08-16 190911.png" alt="Project screenshot 30"><img class="project-photo" src="Screenshot 2026-08-16 194115.png" alt="AutoCAD floor plan project"><img class="project-photo" src="Screenshot 2026-08-16 194424.png" alt="Project screenshot 32"><img class="project-photo" src="Screenshot 2026-08-16 194631.png" alt="Project screenshot 33"><img class="project-photo" src="Screenshot 2026-08-18 192251.png" alt="Project screenshot 34"><img class="project-photo" src="Screenshot 2026-08-18 192355.png" alt="Project screenshot 35"></div><p>CAD-focused engineering design work involving 2D technical drafting and 3D mechanical modeling, demonstrating understanding of engineering drawings, CAD models and mechanical design principles.</p><div class="tags"><span>AutoCAD</span><span>2D Drafting</span><span>3D Modeling</span><span>Mechanical Design</span><span>Engineering Drawing</span><span>architecture draftsman</span></div></div></section>
+  <div class="project"><h3>2D & 3D Drafting Modelling</h3>  <div class="project"><h3>2D & 3D Drafting Modelling</h3><div id="project-gallery" class="project-gallery"><img class="project-photo" src="Screenshot 2026-07-25 200425.png" alt="Project screenshot 1"><img class="project-photo" src="Screenshot 2026-07-28 215211.png" alt="Project screenshot 2"><img class="project-photo" src="Screenshot 2026-07-28 220722.png" alt="Project screenshot 3"><img class="project-photo" src="Screenshot 2026-07-28 223348.png" alt="Project screenshot 4"><img class="project-photo" src="Screenshot 2026-07-28 231626.png" alt="Project screenshot 5"><img class="project-photo" src="Screenshot 2026-07-30 174715.png" alt="Project screenshot 6"><img class="project-photo" src="Screenshot 2026-07-30 213200.png" alt="Project screenshot 7"><img class="project-photo" src="Screenshot 2026-07-30 215415.png" alt="Project screenshot 8"><img class="project-photo" src="Screenshot 2026-07-31 182639.png" alt="Project screenshot 9"><img class="project-photo" src="Screenshot 2026-08-02 100751.png" alt="Project screenshot 10"><img class="project-photo" src="Screenshot 2026-08-06 221511.png" alt="Project screenshot 11"><img class="project-photo" src="Screenshot 2026-08-16 190911.png" alt="Project screenshot 12"><img class="project-photo" src="Screenshot 2026-08-16 194115.png" alt="Project screenshot 13"></div></div>
   <section id="experience"><div class="title"><h2>My <span>Experience</span></h2><p>Academic and practical engineering development</p></div><div class="grid"><div class="card"><h3>CAD Design Practice</h3><p>Developed 2D technical drawings and 3D mechanical models using AutoCAD and engineering design principles.</p></div><div class="card"><h3>Project Experience (Corizo intern)</h3><p>Developed 2D, 3D modeling,architecture draftand mechanical drawings for machine components with precise geometric tolerances.</p></div><div class="card"><h3>Engineering Development</h3><p>Built foundations in mechatronics, programming, automation, robotics, and control systems through academic learning.</p></div></div></section>
   <div id="slide-viewer" class="slide-viewer" role="dialog" aria-modal="true" aria-labelledby="slide-caption" aria-hidden="true"><div id="slide-caption" class="slide-caption">Project picture</div><button class="slide-button slide-close" type="button" aria-label="Close slideshow">&times;</button><button class="slide-button slide-prev" type="button" aria-label="Previous picture">&#10094;</button><img id="slide-image" class="slide-image" alt="Project picture"><button class="slide-button slide-next" type="button" aria-label="Next picture">&#10095;</button><div id="slide-count" class="slide-count" aria-live="polite"></div></div>
   
@@ -100,6 +101,8 @@
   const slideImage = document.querySelector('#slide-image');
   const slideCount = document.querySelector('#slide-count');
   const slideCaption = document.querySelector('#slide-caption');
+  const menuToggle = document.querySelector('.menu');
+  const mainNav = document.querySelector('.nav');
   let slideSources = [];
   let slideIndex = 0;
   const siteFavicon = document.querySelector('#site-favicon');
@@ -112,8 +115,20 @@
     siteFavicon.type = 'image/svg+xml';
     siteFavicon.href = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#38bdf8"/><text x="32" y="43" text-anchor="middle" font-family="Arial" font-size="32" font-weight="700" fill="#07111f">S</text></svg>');
   }
-  const initialProjectPhotos = [...projectGallery.querySelectorAll('img')].map((projectPhoto) => projectPhoto.getAttribute('src'));
-  renderProjectPhotos(initialProjectPhotos);
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+    mainNav.querySelectorAll('a').forEach((navLink) => {
+      navLink.addEventListener('click', () => mainNav.classList.remove('open'));
+    });
+  }
+
+  if (projectGallery) {
+    const initialProjectPhotos = [...projectGallery.querySelectorAll('img')].map((projectPhoto) => projectPhoto.getAttribute('src'));
+    renderProjectPhotos(initialProjectPhotos);
+  }
 
   photoInput?.addEventListener('change', (event) => {
     const selectedPhoto = event.target.files[0];
@@ -140,6 +155,7 @@
   }
 
   function openSlide(index) {
+    if (!slideViewer || !slideImage || !slideCount || !slideCaption || slideSources.length === 0) return;
     slideIndex = index;
     slideImage.classList.remove('slide-enter');
     slideImage.onload = () => requestAnimationFrame(() => slideImage.classList.add('slide-enter'));
@@ -151,16 +167,17 @@
   }
 
   function closeSlide() {
+    if (!slideViewer) return;
     slideViewer.classList.remove('open');
     slideViewer.setAttribute('aria-hidden', 'true');
   }
 
-  document.querySelector('.slide-close').addEventListener('click', closeSlide);
-  document.querySelector('.slide-prev').addEventListener('click', () => openSlide((slideIndex - 1 + slideSources.length) % slideSources.length));
-  document.querySelector('.slide-next').addEventListener('click', () => openSlide((slideIndex + 1) % slideSources.length));
-  slideViewer.addEventListener('click', (event) => { if (event.target === slideViewer) closeSlide(); });
+  document.querySelector('.slide-close')?.addEventListener('click', closeSlide);
+  document.querySelector('.slide-prev')?.addEventListener('click', () => openSlide((slideIndex - 1 + slideSources.length) % slideSources.length));
+  document.querySelector('.slide-next')?.addEventListener('click', () => openSlide((slideIndex + 1) % slideSources.length));
+  slideViewer?.addEventListener('click', (event) => { if (event.target === slideViewer) closeSlide(); });
   document.addEventListener('keydown', (event) => {
-    if (!slideViewer.classList.contains('open')) return;
+    if (!slideViewer || !slideViewer.classList.contains('open')) return;
     if (event.key === 'Escape') closeSlide();
     if (event.key === 'ArrowLeft') openSlide((slideIndex - 1 + slideSources.length) % slideSources.length);
     if (event.key === 'ArrowRight') openSlide((slideIndex + 1) % slideSources.length);
